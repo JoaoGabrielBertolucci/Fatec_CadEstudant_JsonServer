@@ -1,0 +1,24 @@
+{
+  "clients": [
+    {
+      "id": 2,
+      "name": "Jose Antunes",
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 9,
+      "name": "andre",
+      "email": "andre@terra"
+    },
+    {
+      "id": 10,
+      "name": "andre",
+      "email": "andre"
+    },
+    {
+      "id": 11,
+      "name": "zzzz",
+      "email": "zzz@terra"
+    }
+  ]
+}

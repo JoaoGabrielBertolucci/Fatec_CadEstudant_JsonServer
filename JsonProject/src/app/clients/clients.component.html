@@ -1,0 +1,56 @@
+
+<div class="fundo">
+
+    <div class="mb-3" style="text-align: center; color: wheat; font-size: large;">
+     <form [formGroup]="formGroupCliente">
+      
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label" id="name">Name</label>
+        <input type="email" class="form-control" formControlName="name" id="exampleFormControlInput1" placeholder="name" ><br><br>
+      
+        <label for="exampleFormControlTextarea1" class="form-label" id="email">Email address</label>
+        <textarea class="form-control" formControlName="email" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
+    
+        <button type="button" class="btn btn-warning" (click)="saveClients()">Save</button>
+        <button type="button" class="btn btn-warning" (click)="loadClients()">load</button>
+        
+       
+    
+        </div>
+      </form>
+    
+    </div>
+    <table class="table" style="text-align: center; color: wheat; font-size: medium;">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Contact(E-mail)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Clients of Clients">
+            <th scope="row">{{Clients.id}}</th>
+            <td>{{Clients.name}}</td>
+            <td>{{Clients.email}}</td>
+
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-warning me-1" (click)="remove(Clients)">Excluir</button>
+              <button class="btn btn-danger"        (click)="editing(Clients)">Editar</button>
+            </td>
+
+          </tr>
+      </tbody>
+    </table>
+    
+</div>
+    
+    <style>
+    
+      .fundo{
+        width: 100%;
+        background-color: darkcyan;
+      }
+    
+    </style>
+    
