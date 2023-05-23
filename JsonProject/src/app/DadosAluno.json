@@ -1,0 +1,9 @@
+{
+  
+  "aluno": [
+    {"id": 1, "name": "Maria Silva", "email": "maria@gmail.com", "semestre":1 , "RA":7156},
+    {"id": 2, "name": "Jose Antunes", "email": "jose@gmail.com", "semestre":1, "RA":7156},
+    {"id": 3, "name": "Fernanda Souza", "email": "fernanda@gmail.com", "semestre":1, "RA":7156}
+  ]
+
+}

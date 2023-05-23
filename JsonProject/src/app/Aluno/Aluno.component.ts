@@ -1,17 +1,17 @@
 import { Component, OnInit} from '@angular/core';
-import { ClientsService } from './../clients.service';
-import { clients } from '../client';
+import { ClientsService } from '../aluno.service';
+import { alunos } from '../aluno';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
   selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.css']
+  templateUrl: './Aluno.component.html',
+  styleUrls: ['./Aluno.component.css']
 })
 export class ClientsComponent implements OnInit{
   
-  Clients : clients[] = [];
+  Clients : alunos[] = [];
   formGroupCliente : FormGroup;
   isEditing: boolean = false;
 
@@ -52,12 +52,12 @@ export class ClientsComponent implements OnInit{
   
   }
 
-  editing(client: clients): void {
+  editing(client: alunos): void {
     this.formGroupCliente.setValue(client);
     this.isEditing = true;
   }
 
-  remove(client: clients): void {
+  remove(client: alunos): void {
     this.ClientsService.remove(client).subscribe({
        next: () => this.loadClients()
     });

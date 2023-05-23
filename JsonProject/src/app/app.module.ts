@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ClientsComponent } from './clients/clients.component';
+import { ClientsComponent } from './Aluno/Aluno.component';
 
 
 @NgModule({
