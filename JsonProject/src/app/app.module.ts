@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ClientsComponent } from './Aluno/Aluno.component';
+import { AlunosComponent } from './Aluno/Aluno.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsComponent
+    AlunosComponent
   ],
   imports: [
     BrowserModule,

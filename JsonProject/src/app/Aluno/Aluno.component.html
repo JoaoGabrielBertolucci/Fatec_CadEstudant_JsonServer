@@ -2,7 +2,7 @@
 <div class="fundo">
 
     <div class="mb-3" style="text-align: center; color: wheat; font-size: large;">
-     <form [formGroup]="formGroupCliente">
+     <form [formGroup]="formGroupAluno">
       
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label" id="name">Name</label>
@@ -11,8 +11,14 @@
         <label for="exampleFormControlTextarea1" class="form-label" id="email">Email address</label>
         <textarea class="form-control" formControlName="email" id="exampleFormControlTextarea1" placeholder="name@example.com"></textarea><br>
     
-        <button type="button" class="btn btn-warning" (click)="saveClients()">Save</button>
-        <button type="button" class="btn btn-warning" (click)="loadClients()">load</button>
+        <label for="exampleFormControlInput1" class="form-label" id="semestre">Samestre</label>
+        <input type="email" class="form-control" formControlName="semestre" id="exampleFormControlInput1" placeholder="1º, 2º, 3º..." ><br><br>
+      
+        <label for="exampleFormControlTextarea1" class="form-label" id="RA">RA</label>
+        <textarea class="form-control" formControlName="ra" id="exampleFormControlTextarea1" placeholder="123456789"></textarea><br>
+      
+        <button type="button" class="btn btn-warning" (click)="saveAluno()">Save</button>
+        <button type="button" class="btn btn-warning" (click)="loadAluno()">load</button>
         
        
     
@@ -26,17 +32,21 @@
           <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Contact(E-mail)</th>
+          <th scope="col">Semestre º</th>
+          <th scope="col">RA</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let Clients of Clients">
-            <th scope="row">{{Clients.id}}</th>
-            <td>{{Clients.name}}</td>
-            <td>{{Clients.email}}</td>
+        <tr *ngFor="let Alunos of Alunos">
+            <th scope="row">{{Alunos.id}}</th>
+            <td>{{Alunos.name}}</td>
+            <td>{{Alunos.email}}</td>
+            <td>{{Alunos.semestre}}</td>
+            <td>{{Alunos.ra}}</td>
 
             <td class="d-flex justify-content-end">
-              <button class="btn btn-warning me-1" (click)="remove(Clients)">Excluir</button>
-              <button class="btn btn-danger"        (click)="editing(Clients)">Editar</button>
+              <button class="btn btn-warning me-1" (click)="remove(Alunos)">Excluir</button>
+              <button class="btn btn-danger"        (click)="editing(Alunos)">Editar</button>
             </td>
 
           </tr>
@@ -49,7 +59,7 @@
     
       .fundo{
         width: 100%;
-        background-color: darkcyan;
+        background-color: rgb(211, 103, 2);
       }
     
     </style>

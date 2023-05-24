@@ -3,5 +3,5 @@ export interface alunos{
     name : string;
     email : string;
     semestre: number;
-    RA: number;
+    ra: number;
   }

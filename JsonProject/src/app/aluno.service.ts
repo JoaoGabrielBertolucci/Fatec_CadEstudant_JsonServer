@@ -1,17 +1,17 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { alunos } from './aluno';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientsService {
+export class AlunoService {
 
   url = "http://localhost:3000/clients";
 
   constructor(private http : HttpClient) { }
 
-  getClients(): Observable<alunos[]>{
+  getAlunos(): Observable<alunos[]>{
     let url = "http://localhost:3000/clients";
     return this.http.get<alunos[]>(url);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ClientsService } from '../aluno.service';
+import { AlunoService } from '../aluno.service';
 import { alunos } from '../aluno';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -9,42 +9,45 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './Aluno.component.html',
   styleUrls: ['./Aluno.component.css']
 })
-export class ClientsComponent implements OnInit{
+export class AlunosComponent implements OnInit{
   
-  Clients : alunos[] = [];
-  formGroupCliente : FormGroup;
+  Alunos: alunos[] = [];
+  formGroupAluno : FormGroup;
   isEditing: boolean = false;
 
 
-  constructor(private ClientsService : ClientsService,
+  constructor(private AlunoService : AlunoService,
               private formBuilder : FormBuilder
               ){
-    this.formGroupCliente = formBuilder.group({
+    this.formGroupAluno = formBuilder.group({
       id : [''],
       name : [''],
-      email : ['']
+      email : [''],
+      semestre : [''],
+      ra : ['']
+
     });
   }
 
   ngOnInit(): void {
-    this.loadClients();
+    this.loadAluno();
   }
 
-  loadClients(){
-    this.ClientsService.getClients().subscribe(
+  loadAluno(){
+    this.AlunoService.getAlunos().subscribe(
       {
-        next : data => this.Clients = data,
+        next : data => this.Alunos = data,
         error : () => console.log("Erro ao chamar o endpoint")
       }
     );
   }
 
-  saveClients(){
-    this.ClientsService.save(this.formGroupCliente.value).subscribe(
+  saveAluno(){
+    this.AlunoService.save(this.formGroupAluno.value).subscribe(
       {
         next : data => {
-          this.Clients.push(data);
-          this.formGroupCliente.reset();
+          this.Alunos.push(data);
+          this.formGroupAluno.reset();
         }
       }
     );
@@ -52,14 +55,14 @@ export class ClientsComponent implements OnInit{
   
   }
 
-  editing(client: alunos): void {
-    this.formGroupCliente.setValue(client);
+  editing(Alunos: alunos): void {
+    this.formGroupAluno.setValue(Alunos);
     this.isEditing = true;
   }
 
-  remove(client: alunos): void {
-    this.ClientsService.remove(client).subscribe({
-       next: () => this.loadClients()
+  remove(Alunos: alunos): void {
+    this.AlunoService.remove(Alunos).subscribe({
+       next: () => this.loadAluno()
     });
  }
 
